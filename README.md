@@ -38,19 +38,26 @@ Higher order functions are functions that take a function as an argument or retu
 \
 \
 **Lodash**
+\
 A utility library for JS with a section that helps with functional programming. Example of when to use is below.
+<code>
+    const transform = wrapInDiv(toLowerCase(trim(input)))
+</code>
+
+The goal is to get rid of all the parenthesis in the above statement
 
 <code>
-    // const transform = wrapInDiv(toLowerCase(trim(input)))
-    // Get rid of all the parenthesis in the above statement
-    
     npm install lodash
     
     import { compose, pipe } from 'lodash/fp' 
 
     const transform = pipe(trim, toLowerCase, wrapInDiv)
+    
     transform(input)
-    // Order matters, so use the pipe function to list the functions in the order you want to apply them. The compose function is a higher order function that takes 3 arguments and returns a new function with the composition of all the functions. 
+
+    // Order matters, so use the pipe function to list the functions in the order 
+    you want to apply them. The compose function is a higher order function that 
+    takes 3 arguments and returns a new function with the composition of all the functions. 
 </code>
 
 **Curing**

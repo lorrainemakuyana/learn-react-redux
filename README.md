@@ -6,7 +6,7 @@ A state management library that works with JavaScript Applications that can be u
 \
 Redux is useful for keeping different parts of the UI in sync, to update data across UI elements. All the application's state is retrieved from the store, the single source of truth. To update data, only update data in the store and all front end element get their data from the store. It basically centralizes the applications and make data flow transparent. 
 \
-\
+
 ### Why Redux?
 * **Centralization of state** - the store is the single source of truth
 
@@ -23,7 +23,7 @@ Redux is useful for keeping different parts of the UI in sync, to update data ac
 * Complexity 
 * Verbosity 
 
-#### Redux Fundamentals 
+### Redux Fundamentals 
 **Redux uses functional programming**
 Functional programming is a programming paradigm that decomposes a problem into small and reusable pieces(functions) that take inputs and return outputs/results without mutating or changing data. The functions can then be composed to build more complex functions. 
 \
@@ -34,10 +34,10 @@ Functional programming is a programming paradigm that decomposes a problem into 
 * More scalability (parallelism)
 \
 \
-Higher order functions are functions that take a function as an argument or returns a function or does both. Examples are <code>map</code>, <code>setTimeOut</code> and <code>filter</code>
+Higher order functions are functions that take a function as an argument or returns a function or does both. Examples are <code>map</code>, <code>setTimeOut</code> and <code>filter</code> functions.
 \
 \
-**Lodash**
+#### Lodash
 \
 A utility library for JS with a section that helps with functional programming. Example of when to use is below.
 <code>
@@ -46,8 +46,9 @@ A utility library for JS with a section that helps with functional programming. 
 
 </code>
 \
-The goal is to get rid of all the parenthesis in the above statement
 
+The goal is to get rid of all the parenthesis in the above statement, and to do that, here are the steps:
+\
 <code>
 
     npm install lodash
@@ -64,7 +65,7 @@ The goal is to get rid of all the parenthesis in the above statement
 
 </code>
 
-**Curing**
+#### Curing
 
 
 

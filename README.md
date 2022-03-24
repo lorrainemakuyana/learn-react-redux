@@ -33,22 +33,22 @@ Functional programming is a programming paradigm that decomposes a problem into 
 * Easy to debug and test 
 * More scalability (parallelism)
 \
-\
+
 Higher order functions are functions that take a function as an argument or returns a function or does both. Examples are <code>map</code>, <code>setTimeOut</code> and <code>filter</code> functions.
 \
-\
+
 #### Lodash
-\
 A utility library for JS with a section that helps with functional programming. Example of when to use is below.
+\
+
 <code>
-
     const transform = wrapInDiv(toLowerCase(trim(input)))
-
 </code>
 \
 
 The goal is to get rid of all the parenthesis in the above statement, and to do that, here are the steps:
 \
+
 <code>
 
     npm install lodash

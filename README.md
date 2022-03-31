@@ -44,7 +44,7 @@ A utility library for JS with a section that helps with functional programming. 
 \
 The goal is to get rid of all the parenthesis in the above statement, and to do that, here are the steps:
 
-<code>
+```
     npm install lodash
     
     import { compose, pipe } from 'lodash/fp' 
@@ -60,7 +60,7 @@ The goal is to get rid of all the parenthesis in the above statement, and to do 
     /* Order matters, so use the pipe function to list the functions in the order 
     you want to apply them. The compose function is a higher order function that 
     takes 3 arguments and returns a new function with the composition of all the functions. */
-</code>
+```
 
 #### Curing
 It is a functional programming technique 

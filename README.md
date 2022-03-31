@@ -45,7 +45,6 @@ A utility library for JS with a section that helps with functional programming. 
 The goal is to get rid of all the parenthesis in the above statement, and to do that, here are the steps:
 
 <code>
-
     npm install lodash
     
     import { compose, pipe } from 'lodash/fp' 
@@ -61,16 +60,14 @@ The goal is to get rid of all the parenthesis in the above statement, and to do 
     /* Order matters, so use the pipe function to list the functions in the order 
     you want to apply them. The compose function is a higher order function that 
     takes 3 arguments and returns a new function with the composition of all the functions. */
-
 </code>
 
 #### Curing
 It is a functional programming technique 
-\ 
+
 
 Example 
 <code>
-
     const input = "   Learning Redux    "
 
     const wrap = (type, str) => {
@@ -84,22 +81,19 @@ Example
     const transform = pipe(trim, toLowerCase, wrap("div"))
     console.log(input.transform()) // This returns an error or undefined
 
-    // In piping, the output of the first function is the input of the //// next element. Every parameter to the function has to be a function. 
-
+    // In piping, the output of the first function is the input of the 
+    // next element. Every parameter to the function has to be a function. 
 </code>
 
 In currying, instead of separating parameters using commas, we use parenthesis, e.g <code>add(1)(2)</code>, but the function has a single parameter that returns another function with another parameter. 
 
 <code>
-
     const add = a => b => a + b 
-
 </code>
 
 In the <code>wrap</code> function above, the wrap function can be written as a function just like the add function. 
 
 <code>
-
     const trim = str => str.trim()
 
     const toLowerCase = str => str.toLowerCase()
@@ -111,7 +105,6 @@ In the <code>wrap</code> function above, the wrap function can be written as a f
     // This returns a div with the contents of str trimmed and 
     // converted to lower case. 
     // The parameter wrap can be changed to any HTML element to render different elements on the page.
-
 </code>
 
 #### Pure Functions 
@@ -122,14 +115,12 @@ A function is pure if it gives the same result for the same arguments/parameters
 * No mutation of parameters 
 
 Example of a pure function
-<code>
-    
+<code> 
     function add(a, b) {
         return a + b 
     }
 
     // This function always returns the same number if given the same a and b values, hence it is pure.
-
 </code>
 
 **Benefits of a pure function**
@@ -138,7 +129,7 @@ Example of a pure function
 * Concurrency - (parallelism)
 * Cacheable - results can be stored in the cache, useful for functions with complex computations 
 
-#### Immutability
+### Immutability
 Once created, they cannot be changed, to change it, create a copy and change it in the copy. 
 
 *Benefits* 
@@ -152,7 +143,6 @@ Once created, they cannot be changed, to change it, create a copy and change it 
 
 **Immutability in JavaScript Objects**
 <code>
-
     const person = { 
         name: "Lorraine", 
         address: {
@@ -177,12 +167,10 @@ Once created, they cannot be changed, to change it, create a copy and change it 
             city: "New York"
         }
     }
-
 </code>
 
 **Updating Arrays**
 <code>
-
     const numbers = [1, 2, 3]
 
     // TO ADD 
@@ -199,17 +187,15 @@ Once created, they cannot be changed, to change it, create a copy and change it 
 
     // TO UPDATE, e.g to update 2
     const updated = numbers.map(n => n === 2 ? 20 : n)
-
 </code>
 
-#### Enforcing immutability in JavaScript 
-Use immutable libraries to enforce immutability in JavaScript e.g Immutable 
+### Enforcing immutability in JavaScript 
+Use immutable libraries to enforce immutability in JavaScript 
 
 **Immutable JS** 
 To install <code>npm install immutable</code> and create your file this way: 
 
 <code>
-
     import { Map } from 'immutable'
 
     let book = Map({ title: "Nancy Drew" })
@@ -224,14 +210,12 @@ To install <code>npm install immutable</code> and create your file this way:
 
     publish(book)
     console.log(book)
-
 </code>
 
 **Immer JS** 
 To install <code>npm install immer</code> and create your file this way: 
 
 <code>
-
     import { produce } from 'immer'
 
     let book = Map({ title: "Nancy Drew" })
@@ -245,7 +229,6 @@ To install <code>npm install immer</code> and create your file this way:
     let updated = publish(book)
     console.log(book)
     console.log(updated)
-    
 </code>
 
 ### Redux 
@@ -269,7 +252,6 @@ The action is dispatched to the store which will call the reducer for the event,
 * When navigating away from pages, unsubscribe the UI components that are not part of the new rendered pages 
 
 <code>
-
     const unsubscribe = store.subscribe(() => {
     console.log("Store changed!", store.getState())
     })
@@ -282,7 +264,6 @@ The action is dispatched to the store which will call the reducer for the event,
     })
 
     unsubscribe()
-
 </code>
 
 * The dispatch function gets the new state after the action from the reducer and notifies the subscribers of the changes made to the state.

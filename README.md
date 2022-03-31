@@ -37,9 +37,9 @@ Higher order functions are functions that take a function as an argument or retu
 #### Lodash
 A utility library for JS with a section that helps with functional programming. Example of when to use is below.
 
-<code>
+```
     const transform = wrapInDiv(toLowerCase(trim(input)))
-</code>
+```
 
 \
 The goal is to get rid of all the parenthesis in the above statement, and to do that, here are the steps:
@@ -67,7 +67,7 @@ It is a functional programming technique
 
 
 Example 
-<code>
+```
     const input = "   Learning Redux    "
 
     const wrap = (type, str) => {
@@ -83,17 +83,17 @@ Example
 
     // In piping, the output of the first function is the input of the 
     // next element. Every parameter to the function has to be a function. 
-</code>
+```
 
 In currying, instead of separating parameters using commas, we use parenthesis, e.g <code>add(1)(2)</code>, but the function has a single parameter that returns another function with another parameter. 
 
-<code>
+```
     const add = a => b => a + b 
-</code>
+```
 
 In the <code>wrap</code> function above, the wrap function can be written as a function just like the add function. 
 
-<code>
+```
     const trim = str => str.trim()
 
     const toLowerCase = str => str.toLowerCase()
@@ -105,7 +105,7 @@ In the <code>wrap</code> function above, the wrap function can be written as a f
     // This returns a div with the contents of str trimmed and 
     // converted to lower case. 
     // The parameter wrap can be changed to any HTML element to render different elements on the page.
-</code>
+```
 
 #### Pure Functions 
 A function is pure if it gives the same result for the same arguments/parameters always. The <code>Math.random()</code> function is an example of a pure function. In a pure function: 
@@ -115,13 +115,13 @@ A function is pure if it gives the same result for the same arguments/parameters
 * No mutation of parameters 
 
 Example of a pure function
-<code> 
+``` 
     function add(a, b) {
         return a + b 
     }
 
     // This function always returns the same number if given the same a and b values, hence it is pure.
-</code>
+```
 
 **Benefits of a pure function**
 * Self documenting 
@@ -142,7 +142,7 @@ Once created, they cannot be changed, to change it, create a copy and change it 
 * Memory overhead - copying objects - Use structural sharing i.e. if data is the same across objects, it is shared.  
 
 **Immutability in JavaScript Objects**
-<code>
+```
     const person = { 
         name: "Lorraine", 
         address: {
@@ -167,10 +167,10 @@ Once created, they cannot be changed, to change it, create a copy and change it 
             city: "New York"
         }
     }
-</code>
+```
 
 **Updating Arrays**
-<code>
+```
     const numbers = [1, 2, 3]
 
     // TO ADD 
@@ -187,7 +187,7 @@ Once created, they cannot be changed, to change it, create a copy and change it 
 
     // TO UPDATE, e.g to update 2
     const updated = numbers.map(n => n === 2 ? 20 : n)
-</code>
+```
 
 ### Enforcing immutability in JavaScript 
 Use immutable libraries to enforce immutability in JavaScript 
@@ -195,7 +195,7 @@ Use immutable libraries to enforce immutability in JavaScript
 **Immutable JS** 
 To install <code>npm install immutable</code> and create your file this way: 
 
-<code>
+```
     import { Map } from 'immutable'
 
     let book = Map({ title: "Nancy Drew" })
@@ -210,12 +210,12 @@ To install <code>npm install immutable</code> and create your file this way:
 
     publish(book)
     console.log(book)
-</code>
+```
 
 **Immer JS** 
 To install <code>npm install immer</code> and create your file this way: 
 
-<code>
+```
     import { produce } from 'immer'
 
     let book = Map({ title: "Nancy Drew" })
@@ -229,7 +229,7 @@ To install <code>npm install immer</code> and create your file this way:
     let updated = publish(book)
     console.log(book)
     console.log(updated)
-</code>
+```
 
 ### Redux 
 Data in the store is an immutable object, hence create a function that takes in the store and returns the updated version of the store. This function is called a <code>reducer</code>. It is a function that takes the current instance of the store as an argument and return the updated store. It also takes in an action that describes what happened ie. an event, on which the update of the store will be based. 
@@ -251,7 +251,7 @@ The action is dispatched to the store which will call the reducer for the event,
 * All UI components should subscribe to the store to get notified of changing states 
 * When navigating away from pages, unsubscribe the UI components that are not part of the new rendered pages 
 
-<code>
+```
     const unsubscribe = store.subscribe(() => {
     console.log("Store changed!", store.getState())
     })
@@ -264,7 +264,7 @@ The action is dispatched to the store which will call the reducer for the event,
     })
 
     unsubscribe()
-</code>
+```
 
 * The dispatch function gets the new state after the action from the reducer and notifies the subscribers of the changes made to the state.
 * Use constants to define variables you need in many files/places and import them, especially for actions eg. <code>actionTypes</code>
